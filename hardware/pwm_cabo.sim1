@@ -1,0 +1,53 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="1" >
+
+<item itemtype="Subcircuit" CircId="Uno-45" mainComp="false" Show_id="true" Show_Val="false" Pos="-572,-184" rotation="-180" hflip="1" vflip="1" label="Arduino" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega328-109" Frequency="16 MHz" Program="pwm_cabo/build/arduino.avr.uno/sketch_feb16a.ino.hex" Auto_Load="true" saveEepr="true" MainMcu="true" SerialMon="1" />
+</item>
+
+<item itemtype="Subcircuit" CircId="L298P-46" mainComp="false" Show_id="true" Show_Val="false" Pos="-268,44" rotation="0" hflip="1" vflip="1" label="L298P-46" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1e+09 Ω" Out_High_V="12 V" Out_Low_V="0 V" Out_Imped="40 Ω" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Logic_Symbol="true" />
+
+<item itemtype="DcMotor" CircId="DcMotor-47" mainComp="false" Show_id="true" Show_Val="false" Pos="-72,-20" rotation="0" hflip="1" vflip="1" label="Motor izquierda" idLabPos="-23.6447,-48" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="12 V" Resistance="100 Ω" />
+
+<item itemtype="DcMotor" CircId="DcMotor-52" mainComp="false" Show_id="true" Show_Val="false" Pos="108,-20" rotation="0" hflip="1" vflip="1" label="Motor derecha" idLabPos="-23.6447,-47.4518" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="12 V" Resistance="100 Ω" />
+
+<item itemtype="Ground" CircId="Ground-53" mainComp="false" Show_id="false" Show_Val="false" Pos="-172,132" rotation="0" hflip="1" vflip="1" label="Ground-53" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-55" mainComp="false" Show_id="false" Show_Val="false" Pos="-144,92" rotation="180" hflip="1" vflip="1" label="Fixed Voltage-55" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="12 V" Out="true" />
+
+<item itemtype="SerialTerm" CircId="SerialTerm-60" mainComp="false" Show_id="false" Show_Val="false" Pos="-324,156" rotation="0" hflip="1" vflip="1" label="SerialTerm-60" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Baudrate="115200 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="false" />
+
+<item itemtype="Node" CircId="Node-54" mainComp="false" Pos="-220,108" />
+
+<item itemtype="Connector" uid="Connector-111" startpinid="L298P-46-OUT1" endpinid="DcMotor-47-lPin" pointList="-228,52,-124,52,-124,-20,-112,-20" />
+
+<item itemtype="Connector" uid="Connector-120" startpinid="L298P-46-OUT2" endpinid="DcMotor-47-rPin" pointList="-228,60,-16,60,-16,-20,-32,-20" />
+
+<item itemtype="Connector" uid="Connector-121" startpinid="DcMotor-52-lPin" endpinid="L298P-46-OUT3" pointList="68,-20,36,-20,36,68,-228,68" />
+
+<item itemtype="Connector" uid="Connector-122" startpinid="L298P-46-OUT4" endpinid="DcMotor-52-rPin" pointList="-228,76,164,76,164,-20,148,-20" />
+
+<item itemtype="Connector" uid="Connector-124" startpinid="Ground-53-Gnd" endpinid="Node-54-1" pointList="-172,116,-172,108,-220,108" />
+
+<item itemtype="Connector" uid="Connector-125" startpinid="L298P-46-SenA" endpinid="Node-54-0" pointList="-228,100,-220,100,-220,108" />
+
+<item itemtype="Connector" uid="Connector-126" startpinid="Node-54-2" endpinid="L298P-46-SenB" pointList="-220,108,-228,108" />
+
+<item itemtype="Connector" uid="Connector-127" startpinid="Fixed Voltage-55-outnod" endpinid="L298P-46-Vs" pointList="-160,92,-228,92" />
+
+<item itemtype="Connector" uid="Connector-129" startpinid="SerialTerm-60-pin1" endpinid="Uno-45-1" pointList="-348,164,-380,164,-380,16,-420,16" />
+
+<item itemtype="Connector" uid="Connector-137" startpinid="L298P-46-EnA" endpinid="Uno-45-5" pointList="-276,92,-316,92,-316,-16,-420,-16" />
+
+<item itemtype="Connector" uid="Connector-139" startpinid="L298P-46-IN4" endpinid="Uno-45-11" pointList="-276,76,-332,76,-332,-72,-420,-72" />
+
+<item itemtype="Connector" uid="Connector-140" startpinid="Uno-45-6" endpinid="L298P-46-EnB" pointList="-420,-24,-336,-24,-336,100,-276,100" />
+
+<item itemtype="Connector" uid="Connector-141" startpinid="SerialTerm-60-pin0" endpinid="Uno-45-0" pointList="-348,148,-348,24,-420,24" />
+
+<item itemtype="Connector" uid="Connector-150" startpinid="L298P-46-IN1" endpinid="Uno-45-8" pointList="-276,52,-308,52,-308,-48,-420,-48" />
+
+<item itemtype="Connector" uid="Connector-151" startpinid="Uno-45-9" endpinid="L298P-46-IN2" pointList="-420,-56,-300,-56,-300,60,-276,60" />
+
+<item itemtype="Connector" uid="Connector-138" startpinid="Uno-45-10" endpinid="L298P-46-IN3" pointList="-420,-64,-324,-64,-324,68,-276,68" />
+
+</circuit>
